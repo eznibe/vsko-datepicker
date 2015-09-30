@@ -1,5 +1,15 @@
 {
   "name": "vsko-datepicker",
   "version": "0.0.1",
-  "description": "A datepicker directive for angular"
+  "description": "A datepicker directive for angular",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eznibe/vsko-datepicker.git"
+  },
+  "author": {
+    "name": "Ezequiel Bertran",
+    "email": "enbertran@gmail.com",
+    "url": "https://github.com/eznibe"
+  },
+  "browserify": { "transform": [ "node-lessify" ] }
 }
