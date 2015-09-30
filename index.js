@@ -1,5 +1,4 @@
 
-//require( './css/bootstrap-datepicker.css' );
 require( './css/bootstrap-datepicker3.css' );
 
 require( './bootstrap-datepicker.js' );
