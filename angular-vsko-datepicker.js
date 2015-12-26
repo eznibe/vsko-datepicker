@@ -12,7 +12,7 @@ module.exports =
         'date': '=dateModel'
       },
       template:
-      '<div class="input-group date mydate"><input type="text" class="form-control myclass"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>',
+      '<div class="input-group date mydate"><input ng-model="dateInput" type="text" class="form-control myclass"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>',
       link: function (scope, elem, attr) {
 
         var dpElem = $(elem[0].childNodes[0]);
@@ -27,10 +27,16 @@ module.exports =
         });
 
         dpElem.datepicker().on('changeDate', function (e) {
-          console.log('New date value', e.date);
+          // console.log('New date value', e.date);
           scope.$apply(function () {
             scope.date = e.format(0, 'yyyy-mm-dd');
           });
+        });
+
+        scope.$watch('dateInput', function(n, o){
+          if(o && !n) {
+            scope.date = undefined;
+          }
         });
 
         scope.$watch('date', function(value){
@@ -41,4 +47,3 @@ module.exports =
       }
     }
   }]
-
