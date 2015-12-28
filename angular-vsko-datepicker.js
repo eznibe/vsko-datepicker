@@ -9,7 +9,8 @@ module.exports =
     return {
       restrict: 'EA',
       scope: {
-        'date': '=dateModel'
+        'date': '=dateModel',
+        'orientation': '@'
       },
       template:
       '<div class="input-group date mydate"><input ng-model="dateInput" type="text" class="form-control myclass"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span></div>',
@@ -23,7 +24,7 @@ module.exports =
           language: "nl-BE",
           autoclose: true,
           todayHighlight: true,
-          orientation: 'top auto'
+          orientation: scope.orientation ? scope.orientation : 'top auto'
         });
 
         dpElem.datepicker().on('changeDate', function (e) {
