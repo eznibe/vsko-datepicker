@@ -8,5 +8,4 @@ var module =
 
 module.directive( 'datePicker', require( './angular-vsko-datepicker.js' ) );
 
-
 module.exports = module;
